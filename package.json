@@ -1,7 +1,7 @@
 {
   "name": "jsdoc-tests",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A JSDoc test tool for Documentation-Driven Quality",
   "source": "src/index.ts",
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
