@@ -1,0 +1,55 @@
+{
+  "name": "jsdoc-tests",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.ts",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "scripts": {
+    "build": "microbundle -f es,cjs",
+    "dev": "microbundle watch",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "commit": "yarn git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unadlib/jsdoc-tests.git"
+  },
+  "keywords": [],
+  "author": "unadlib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unadlib/jsdoc-tests/issues"
+  },
+  "homepage": "https://github.com/unadlib/jsdoc-tests#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "commitizen": "^4.2.2",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "microbundle": "^0.12.4",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.12.7",
+    "markdown-it": "^12.0.2"
+  }
+}
