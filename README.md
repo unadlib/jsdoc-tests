@@ -11,7 +11,7 @@ A JSDoc test tool for Documentation-Driven Quality
 yarn add -D jsdoc-tests # npm install -D jsdoc-tests
 ```
 
-## Usage and Example
+## Usage
 
 - Create A source code in `./src/example.ts` with JSDoc.
 
@@ -35,7 +35,7 @@ export const add = (a: number, b: number) => {
 };
 ````
 
-- Create a test file
+- Create a test code in `./test/index.test.ts`.
 
 ```ts
 import { jsdocTests } from 'jsdoc-tests';

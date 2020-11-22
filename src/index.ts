@@ -5,10 +5,11 @@ import { parse } from '@babel/parser';
 const languages = ['js', 'javascript', 'ts', 'typescript'];
 
 /**
+ * `jsdoc-test` entry function for test a source file with some jsdoc testing code.
  *
- * @param path {string}
- * @param dirname {string}
- * @param execute {(path: string) => unknown}
+ * @param path {string} - A source file path.
+ * @param dirname {string} - A path to execute the test, recommend `__dirname` with nodejs.
+ * @param execute {(path: string) => unknown} - A execution method, recommend `require` with nodejs.
  *
  * @example
  *
