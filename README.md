@@ -15,7 +15,7 @@ yarn add -D jsdoc-tests # npm install -D jsdoc-tests
 
 - Create A source code in `./src/example.ts` with JSDoc.
 
-```ts
+````ts
 /**
  * Two numbers added together
  *
@@ -25,22 +25,22 @@ yarn add -D jsdoc-tests # npm install -D jsdoc-tests
  * @example
  *
  * ```ts
- * const { add } = require('../test/example');
+ * import { add } from '../src/example';
  *
  * expect(add(1, 2)).toBe(3);
  * ```
  */
 export const add = (a: number, b: number) => {
   return a + b;
-}
-```
+};
+````
 
 - Create a test file
 
 ```ts
 import { jsdocTests } from 'jsdoc-tests';
 
-test('test add', () => {
-  jsdocTests('./src/example.ts');
+test('test "add" function', () => {
+  jsdocTests('../src/example.ts', __dirname, require);
 });
 ```
