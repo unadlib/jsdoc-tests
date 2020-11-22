@@ -1,6 +1,5 @@
-
 import { jsdocTests } from '../src';
 
 test('base', () => {
-  jsdocTests('./test/example.ts');
+  jsdocTests('./test/case/example.ts', __dirname, require);
 });
