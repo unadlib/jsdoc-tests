@@ -3,7 +3,7 @@
 ![Node CI](https://github.com/unadlib/jsdoc-tests/workflows/Node%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/jsdoc-tests.svg)](http://badge.fury.io/js/jsdoc-tests)
 
-A JSDoc test tool for Documentation-Driven Quality
+A JSDoc test tool for documentation-driven quality
 
 ## Installation
 
