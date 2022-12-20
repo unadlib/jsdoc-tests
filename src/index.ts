@@ -14,14 +14,13 @@ const languages = ['js', 'javascript', 'ts', 'typescript'];
  * @example
  *
  * ```ts
- * import { jsdocTests } from './src';
+ * import { jsdocTests } from '../src';
  *
- * jsdocTests('./src/index.ts');
+ * jsdocTests('../src/index.ts', __dirname);
  * ```
  */
-export const jsdocTests = (path: string) => {
+export const jsdocTests = (path: string, dirname: string) => {
   return new Promise<void>((_resolve, _reject) => {
-    const dirname = process.cwd();
     const filePath = resolve(dirname, path);
     const filename = basename(filePath).replace(
       new RegExp(`${extname(filePath)}$`),

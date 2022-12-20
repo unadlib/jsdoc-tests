@@ -1,9 +1,9 @@
 import { jsdocTests } from '../src';
 
 test('base', () => {
-  jsdocTests('./src/index.ts');
+  jsdocTests('../src/index.ts', __dirname);
 });
 
-test('case with typescript', async () => {
-  await jsdocTests('./test/case/example.ts');
+test('case with typescript', () => {
+  jsdocTests('./case/example.ts', __dirname);
 });

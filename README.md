@@ -25,7 +25,7 @@ yarn add -D jsdoc-tests # npm install -D jsdoc-tests
  * @example
  *
  * ```ts
- * import { add } from './src/example';
+ * import { add } from '../src/example';
  *
  * expect(add(1, 2)).toBe(3);
  * ```
@@ -41,8 +41,6 @@ export const add = (a: number, b: number) => {
 import { jsdocTests } from 'jsdoc-tests';
 
 test('test "add" function', () => {
-  jsdocTests('./src/example.ts');
+  jsdocTests('../src/example.ts', __dirname);
 });
 ```
-
-> Both the `import` path in jsdoc and the path passed in by `jsdocTests() `should be based on the relative path to execute the test.
