@@ -3,7 +3,7 @@
 ![Node CI](https://github.com/unadlib/jsdoc-tests/workflows/Node%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/jsdoc-tests.svg)](http://badge.fury.io/js/jsdoc-tests)
 
-A JSDoc test tool for documentation-driven quality
+A JSDoc test tool for documentation-driven quality, support async function and export module(ES module/CommonJS).
 
 ## Installation
 
@@ -25,7 +25,7 @@ yarn add -D jsdoc-tests # npm install -D jsdoc-tests
  * @example
  *
  * ```ts
- * import { add } from '../src/example';
+ * import { add } from './src/example';
  *
  * expect(add(1, 2)).toBe(3);
  * ```
@@ -41,6 +41,8 @@ export const add = (a: number, b: number) => {
 import { jsdocTests } from 'jsdoc-tests';
 
 test('test "add" function', () => {
-  jsdocTests('../src/example.ts', __dirname, require);
+  jsdocTests('./src/example.ts');
 });
 ```
+
+> Both the `import` path in jsdoc and the path passed in by `jsdocTests() `should be based on the relative path to execute the test.
