@@ -19,7 +19,16 @@ const languages = ['js', 'javascript', 'ts', 'typescript'];
  * jsdocTests('../src/index.ts', __dirname);
  * ```
  */
-export const jsdocTests = (path: string, dirname: string) => {
+export const jsdocTests = (
+  /**
+   * A source file path.
+   */
+  path: string,
+  /**
+   * relative path to execute the test, recommend `__dirname` with nodejs.
+   */
+  dirname = process.cwd()
+) => {
   return new Promise<void>((_resolve, _reject) => {
     const filePath = resolve(dirname, path);
     const filename = basename(filePath).replace(
@@ -31,7 +40,7 @@ export const jsdocTests = (path: string, dirname: string) => {
       sourceType: 'module',
       plugins: ['jsx', 'typescript'],
     });
-    const promises: Promise<any>[] = [];
+    const promises: Promise<void>[] = [];
     let index = 0;
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const markdown = require('markdown-it')({
@@ -44,7 +53,7 @@ export const jsdocTests = (path: string, dirname: string) => {
           writeFileSync(path, text, 'utf8');
           // eslint-disable-next-line @typescript-eslint/no-var-requires
           const result = require(path);
-          let fn: ((...args: any) => any) | null = null;
+          let fn: ((...args: unknown[]) => Promise<void>) | null = null;
           if (typeof result === 'function') {
             fn = result;
           } else if (typeof result.default === 'function') {

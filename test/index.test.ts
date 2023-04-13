@@ -5,5 +5,9 @@ test('base', () => {
 });
 
 test('case with typescript', () => {
-  jsdocTests('./case/example.ts', __dirname);
+  jsdocTests('./test/case/example.ts');
+});
+
+test('case with async', async () => {
+  await jsdocTests('./case/async.ts', __dirname);
 });

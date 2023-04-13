@@ -25,7 +25,7 @@ yarn add -D jsdoc-tests # npm install -D jsdoc-tests
  * @example
  *
  * ```ts
- * import { add } from '../src/example';
+ * import { add } from './src/example';
  *
  * expect(add(1, 2)).toBe(3);
  * ```
@@ -41,6 +41,6 @@ export const add = (a: number, b: number) => {
 import { jsdocTests } from 'jsdoc-tests';
 
 test('test "add" function', () => {
-  jsdocTests('../src/example.ts', __dirname);
+  jsdocTests('./src/example.ts');
 });
 ```

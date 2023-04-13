@@ -7,7 +7,7 @@
  * @example
  *
  * ```ts
- * import { add } from './case/example';
+ * import { add } from './test/case/example';
  *
  * export default async () => {
  *   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -28,7 +28,7 @@ export const add = (a: number, b: number) => {
  * @example
  *
  * ```ts
- * import { subtract } from './case/example';
+ * import { subtract } from './test/case/example';
  *
  * expect(subtract(2, 1)).toBe(1);
  * ```
